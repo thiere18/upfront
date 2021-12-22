@@ -1,12 +1,12 @@
 FROM ubuntu:18.04
 
 RUN apt update -y \
-    && apt install nginx -y 
-    # && apt-get install software-properties-common -y \
-    # && add-apt-repository -r ppa:certbot/certbot -y \
-    # && apt-get update -y \
-    # && apt-get install python3-certbot-nginx -y \
-    # && apt-get clean
+    && apt install nginx -y \
+    && apt-get install software-properties-common -y \
+    && add-apt-repository -r ppa:certbot/certbot -y \
+    && apt-get update -y \
+    && apt-get install python3-certbot-nginx -y \
+    && apt-get clean
 
 EXPOSE 80
 
