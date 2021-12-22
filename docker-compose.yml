@@ -63,8 +63,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - './frontend:/app:cached'
-      - './frontend/node_modules:/app/node_modules:cached'
       - ./frontend/build:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     environment:
