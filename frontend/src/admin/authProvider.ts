@@ -10,7 +10,7 @@ const authProvider = {
     let formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
-    const request = new Request('http://back.thiere18.studio/api/token', {
+    const request = new Request('https://back.thiere18.studio/api/token', {
       method: 'POST',
       body: formData,
     });

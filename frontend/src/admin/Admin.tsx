@@ -17,7 +17,7 @@ const httpClient = (url: any, options: any) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider('http://back.thiere18.studio/api/v1', httpClient);
+const dataProvider = simpleRestProvider('https://back.thiere18.studio/api/v1', httpClient);
 
 export const Admin: FC = () => {
   return (

@@ -26,7 +26,7 @@ export const login = async (email: string, password: string) => {
   formData.append('username', email);
   formData.append('password', password);
 
-  const request = new Request('http://back.thiere18.studio/api/token', {
+  const request = new Request('https://back.thiere18.studio/api/token', {
     method: 'POST',
     body: formData,
   });
@@ -84,7 +84,7 @@ export const signUp = async (
   formData.append('username', email);
   formData.append('password', password);
 
-  const request = new Request('/api/signup', {
+  const request = new Request('https://back.thiere18.studio/api/signup', {
     method: 'POST',
     body: formData,
   });
