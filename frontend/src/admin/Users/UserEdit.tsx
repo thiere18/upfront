@@ -16,12 +16,18 @@ export const CT_SELECT_I18N = [
 export const UserEdit: FC = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
+    <TextInput disabled source="id" />
       <TextInput source="username" />
       <TextInput source="email" />
       <TextInput source="first_name" />
       <TextInput source="last_name" />
       <PasswordInput source="password" />
+      <TextInput source="restricted_areas" />
+      <TextInput source="permitted_areas" />
+      <TextInput source="restricted_sources" />
+      <TextInput source="permitted_sources" />
+      <TextInput source="restricted_tags" />
+      <TextInput source="permitted_tags" />
       <SelectInput
         source="role"
         choices={CT_SELECT_I18N}

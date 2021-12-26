@@ -21,13 +21,19 @@ export const UserList: FC = (props) => {
     <>
       <List {...props}>
         <Datagrid rowClick="edit">
-          <TextField source="id" />
+        <TextField source="id" />
           <TextField source="username" />
           <EmailField source="email" />
           <TextField source="first_name" />
           <TextField source="last_name" />
           <BooleanField source="is_active" />
           <TextField source="role" />
+          <TextField source="restricted_areas"  />
+          <TextField source="permitted_areas" />
+          <TextField source="restricted_sources"  />
+          <TextField source="permitted_sources"  />
+          <TextField source="restricted_tags" />
+          <TextField source="permitted_tags"  />
           {permissions==='admin'&& <EditButton />}
           {permissions === 'admin' && <DeleteButton basePath="/users" /> }
 
