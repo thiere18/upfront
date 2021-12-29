@@ -22,7 +22,6 @@
     "test": "CI=true react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy":"https://backs.thiere18.studio",
   "eslintConfig": {
     "extends": "airbnb"
   },
