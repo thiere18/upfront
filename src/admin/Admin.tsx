@@ -17,7 +17,8 @@ const httpClient = (url: any, options: any) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider('https://backs.thiere18.studio/api/v1', httpClient);
+const dataProvider = simpleRestProvider('/api/v1', httpClient);
+// console.log(dataProvider)
 
 export const Admin: FC = () => {
   return (
@@ -40,6 +41,8 @@ export const Admin: FC = () => {
 
       />),
       ]}
+      
     </ReactAdmin>
+    
   );
 };
