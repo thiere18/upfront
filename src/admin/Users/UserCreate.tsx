@@ -12,9 +12,6 @@ import {
 } from 'react-admin';
 import {  JsonInput } from "react-admin-json-view";
 
-import { CT_SELECT_I18N } from './UserEdit';
-
-
 export const UserCreate: FC = (props) => (
   <Create {...props}>
     <SimpleForm>

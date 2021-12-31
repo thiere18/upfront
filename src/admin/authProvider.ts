@@ -1,5 +1,5 @@
 import decodeJwt from 'jwt-decode';
-
+import { BACKEND_URL } from '../config'
 type loginFormType = {
   username: string;
   password: string;
@@ -10,7 +10,7 @@ const authProvider = {
     let formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
-    const request = new Request('http://localhost/api/token', {
+    const request = new Request(`${BACKEND_URL}/api/token`, {
       method: 'POST',
       body: formData,
     });

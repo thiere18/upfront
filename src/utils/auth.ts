@@ -1,5 +1,5 @@
 import decodeJwt from 'jwt-decode';
-
+import {BACKEND_URL} from '../config'
 export const isAuthenticated = () => {
   const permissions = localStorage.getItem('permissions');
   if (!permissions) {
@@ -26,7 +26,7 @@ export const login = async (email: string, password: string) => {
   formData.append('username', email);
   formData.append('password', password);
 
-  const request = new Request('http://localhost/api/token', {
+  const request = new Request(`${BACKEND_URL}/api/token`, {
     method: 'POST',
     body: formData,
   });

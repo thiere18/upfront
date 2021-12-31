@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { required } from 'react-admin';
+import { ReferenceInput } from 'react-admin';
 import {
   Edit,
   SimpleForm,
@@ -9,12 +11,6 @@ import {
 } from 'react-admin';
 import { JsonInput } from "react-admin-json-view";
 
-export const CT_SELECT_I18N = [
-  {id: 'admin', text: 'Admin'},
-  { id: 'normal', text: 'Normal' },
-  {id: 'restricted', text: 'Restricted'},
-
-];
 export const UserEdit: FC = (props) => (
   <Edit {...props}>
     <SimpleForm>
@@ -47,13 +43,9 @@ export const UserEdit: FC = (props) => (
           displayDataTypes: false,
         }}
       />
-      <SelectInput
-        source="role"
-        choices={CT_SELECT_I18N}
-        translateChoice={false}
-        optionValue="id"
-        optionText="text"
-      />
+            <ReferenceInput source="role_id" reference="roles">
+               <SelectInput optionText="name" optionValue="id" validate={[required()]} />
+           </ReferenceInput>
       <BooleanInput source="is_active" />
     </SimpleForm>
   </Edit>
