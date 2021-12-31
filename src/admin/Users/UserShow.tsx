@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { usePermissions } from 'react-admin';
+import { ChipField } from 'react-admin';
 
 
 import { Show, TextField } from 'react-admin';
@@ -27,15 +28,15 @@ export const UserShow: FC = (props) => {
 
             </Tab>
             <Tab label="restrctions" >
-            <TextField source="restricted.sources" label="sources" />
-            <TextField source="restricted.areas" label="areas" />
-            <TextField source="restricted.tags" label="tags"/>
+            <ChipField source="restricted.sources" label="sources" />
+            <ChipField source="restricted.areas" label="areas" />
+            <ChipField source="restricted.tags" label="tags"/>
 
             </Tab>
             <Tab label="permissions" >
-            <TextField source="permitted.sources" label="sources" />
-            <TextField source="permitted.areas" label="areas" />
-            <TextField source="permitted.tags" label="tags"/>
+            <ChipField source="permitted.sources" label="sources" />
+            <ChipField source="permitted.areas" label="areas" />
+            <ChipField source="permitted.tags" label="tags"/>
             </Tab>
         </TabbedShowLayout>
 
