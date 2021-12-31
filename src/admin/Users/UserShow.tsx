@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { usePermissions } from 'react-admin';
 import { ChipField } from 'react-admin';
 
 
@@ -9,7 +8,6 @@ import { Tab } from 'react-admin';
 
 
 export const UserShow: FC = (props) => {
-  const { permissions } = usePermissions();
   console.log(props);
 
   return (

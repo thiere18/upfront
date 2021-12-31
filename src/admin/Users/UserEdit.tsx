@@ -7,7 +7,7 @@ import {
   BooleanInput,
   SelectInput
 } from 'react-admin';
-import { JsonField, JsonInput } from "react-admin-json-view";
+import { JsonInput } from "react-admin-json-view";
 
 export const CT_SELECT_I18N = [
   {id: 'admin', text: 'Admin'},

@@ -2,7 +2,6 @@
 import React, { FC } from 'react';
 import { ChipField } from 'react-admin';
 // import { usePermissions } from 'react-admin';
-import { usePermissions } from 'react-admin';
 
 import {
   List,
@@ -10,16 +9,12 @@ import {
   TextField,
   BooleanField,
   EmailField,
-  EditButton,
-  DeleteButton,
-  ShowButton,
+
 } from 'react-admin';
-import { JsonField, JsonInput } from "react-admin-json-view";
 
 // const { loading, permissions } = usePermissions();
 
 export const UserList: FC = (props) => {
-  const { permissions } = usePermissions();
 
   return (
     <>

@@ -4,6 +4,7 @@ import simpleRestProvider from 'ra-data-simple-rest';
 import authProvider from './authProvider';
 
 import { UserList, UserEdit, UserCreate, UserShow} from './Users';
+import { RoleList, RoleEdit, RoleCreate, RoleShow} from './Roles';
 
 const httpClient = (url: any, options: any) => {
   if (!options) {
@@ -17,7 +18,7 @@ const httpClient = (url: any, options: any) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider('https://backs.thiere18.studio/api/v1', httpClient);
+const dataProvider = simpleRestProvider('http://localhost/api/v1', httpClient);
 // console.log(dataProvider)
 
 export const Admin: FC = () => {
@@ -39,9 +40,16 @@ export const Admin: FC = () => {
         // edit={UserEdit}
         // create={UserCreate}
 
-      />),
+        />),
+        <Resource
+        name="roles"
+        list={RoleList}
+        edit={RoleEdit}
+        create={RoleCreate}
+        show={RoleShow}
+      />
       ]}
-      
+
     </ReactAdmin>
     
   );

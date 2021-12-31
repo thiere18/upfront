@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
+import { ReferenceInput } from 'react-admin';
+import { required } from 'react-admin';
 import {
   Create,
   SimpleForm,
   TextInput,
   PasswordInput,
   BooleanInput,
-  ReferenceInput,
-  SelectInput, SelectField,
-  O
+  SelectInput,
+  
 } from 'react-admin';
-import { JsonField, JsonInput } from "react-admin-json-view";
+import {  JsonInput } from "react-admin-json-view";
 
 import { CT_SELECT_I18N } from './UserEdit';
 
@@ -44,14 +45,9 @@ export const UserCreate: FC = (props) => (
           displayDataTypes: false,
         }}
       />
-      <SelectInput
-        source="role"
-        choices={CT_SELECT_I18N}
-        translateChoice={false}
-        optionValue="id"
-        optionText="text"
-    />
-
+            <ReferenceInput source="role_id" reference="roles">
+               <SelectInput optionText="name" optionValue="id" validate={[required()]} />
+           </ReferenceInput>
       <BooleanInput source="is_active" />
 
 
