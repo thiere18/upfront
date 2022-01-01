@@ -10,8 +10,8 @@ import {
 export const RoleEdit: FC = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput source="name" />
+      <TextInput disabled source="id" variant="outlined" />
+      <TextInput source="name" variant="outlined" />
     </SimpleForm>
   </Edit>
 );

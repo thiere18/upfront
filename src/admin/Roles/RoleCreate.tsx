@@ -11,7 +11,7 @@ import {
 export const RoleCreate: FC = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="name" />
+      <TextInput source="name" variant="outlined" />
 
     </SimpleForm>
   </Create>

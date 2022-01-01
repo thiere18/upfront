@@ -15,12 +15,13 @@ import {  JsonInput } from "react-admin-json-view";
 export const UserCreate: FC = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <TextInput source="first_name" />
-      <TextInput source="last_name" />
-      <PasswordInput source="password" />
+      <TextInput source="username" variant="outlined" validate={[required()]} />
+      <TextInput source="email" variant="outlined" validate={[required()]} />
+      <TextInput source="first_name" variant="outlined" />
+      <TextInput source="last_name" variant="outlined" />
+      <PasswordInput source="password" variant="outlined" validate={[required()]} />
       <JsonInput
+        validate={[required()]}
         source="restricted"
         jsonString={false} // Set to true if the value is a string, default: false
         reactJsonOptions={{
@@ -31,7 +32,8 @@ export const UserCreate: FC = (props) => (
           displayDataTypes: false,
         }}
       />
-            <JsonInput
+      <JsonInput
+        validate={[required()]}
         source="permitted"
         jsonString={false} // Set to true if the value is a string, default: false
         reactJsonOptions={{
@@ -42,8 +44,8 @@ export const UserCreate: FC = (props) => (
           displayDataTypes: false,
         }}
       />
-            <ReferenceInput source="role_id" reference="roles">
-               <SelectInput optionText="name" optionValue="id" validate={[required()]} />
+            <ReferenceInput source="role_id" reference="roles" variant="outlined" >
+               <SelectInput optionText="name" optionValue="id" validate={[required()]}  />
            </ReferenceInput>
       <BooleanInput source="is_active" />
 

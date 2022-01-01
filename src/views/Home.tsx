@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { getMessage } from '../utils/api';
 import { isAuthenticated } from '../utils/auth';
+import {  Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -30,21 +31,13 @@ export const Home: FC = () => {
      
       {isAuthenticated() ? (
         <>
-        <a className={classes.link} href="/logout">
-          Logout
-          </a>
-          <a className={classes.link} href="/admin">
-          Dashboard
-        </a>
+            <Redirect to="/admin" />
+
           </>
       ) : (
         <>
-          <a className={classes.link} href="/login">
-            Login
-          </a>
-          <a className={classes.link} href="/signup">
-            Sign Up
-          </a>
+            <Redirect to="/login" />
+
         </>
       )}
     </>
